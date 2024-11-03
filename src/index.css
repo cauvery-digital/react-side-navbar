@@ -124,7 +124,11 @@ body{
 #toggle-btn:hover{
   background-color: var(--hover-clr);
 }
-
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 main{
   padding: min(30px, 7%);
 }

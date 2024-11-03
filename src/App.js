@@ -1,25 +1,26 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Connect from "./pages/Connect";
-import Error from "./pages/Error";
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './components/navbar/NavBar';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import Calender from './pages/Calender';
+import Profile from './pages/Profile';
+import Error from './pages/Error'
 
 function App() {
-  return (  
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
-      <Route path="/connect" element={<Connect />} />
-      <Route path="*" element={<Error />} />
-    </Routes>
-  </BrowserRouter>
+
+  return (
+    <>
+    <NavBar />
+    <div className='homepage-container-devices'>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/dashboard' element={<Dashboard />}/>
+        <Route path='/calender' element={<Calender />}/>
+        <Route path='/profile' element={<Profile />}/>
+        <Route path='*' element={<Error />}/>
+      </Routes>
+    </div>
+    </>
   );
 }
 

@@ -1,13 +1,11 @@
 import React from 'react';
 import './Home.css';
-import NavBar from '../components/navbar/NavBar.jsx';
-import Footer from '../components/footer/Footer.jsx';
 
 function Home() {
   return (
     <>
-    <NavBar />
   <main>
+  <div class="clearfix"></div>
       <div className="container">
         <h2>Hello World</h2>
         <p>
@@ -27,7 +25,6 @@ function Home() {
         </p>
       </div>
     </main>
-    <Footer />
     </>
   );
 };
