@@ -23,8 +23,43 @@ body{
   display: grid;
   grid-template-columns: auto 1fr;
 }
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  padding: min(30px, 7%);
+}
+main p{
+  color: var(--secondary-text-clr);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.container{
+  border: 1px solid var(--line-clr);
+  border-radius: 1em;
+  margin-bottom: 20px;
+  margin-left: 250px;
+  padding: min(3em, 15%);  
+  transition: all .5s;
+
+  h2, p { margin-top: 1em }
+}
+.nav-closed{
+  border: 1px solid var(--line-clr);
+  border-radius: 1em;
+  margin-bottom: 20px;
+  margin-left: 60px;
+  padding: min(3em, 15%);
+  transition: all .5s;
+}
 @media(max-width: 800px){
-  body{
-    grid-template-columns: 1fr;
+  main{
+    padding: 2em 1em 60px 1em;
+  }
+  .container{
+    margin-left: 0;
+    border: none;
+    padding: 0;
   }
 }

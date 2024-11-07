@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Sidebar from '../components/navbar/Sidebar'
 
 function Profile() {
+  const [isNavClosed, setIsNavClosed] = useState(false);
+  const handleSidebarClose = () => {
+    setIsNavClosed(!isNavClosed);
+  };
   return (
-    <div>
+  <>
+  <Sidebar onSidebarClose={handleSidebarClose}/>
     <main>
-      <div class="container">
+    <div className={isNavClosed ? 'nav-closed' : 'container'}>
         <h2>Profile</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis porro iure quaerat aliquam! Optio dolorum in eum provident, facilis error repellendus excepturi enim dolor deleniti adipisci consectetur doloremque, unde maiores odit sapiente. Atque ab necessitatibus laboriosam consequatur eius similique, ex dolorum eum eaque sequi id veritatis voluptates perspiciatis, cupiditate pariatur.</p>
       </div>
     </main>      
-    </div>
+    </>
   );
 }
 
